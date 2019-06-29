@@ -20,7 +20,7 @@ class Drawer extends Component {
         return (
             <ScrollView>
                 <View style={{ justifyContent: 'center', alignItems: 'center', marginVertical: 20 }}>
-                    <Image source={require('../../assets/dwnld.jpeg')} style={{ width: 100, height: 100, justifyContent: 'center', borderRadius: 100 }} />
+                    <Image source={require('../../assets/rion.jpg')} style={{ width: 100, height: 100, justifyContent: 'center', borderRadius: 100 }} />
                 </View>
                 <View style={{ justifyContent: 'center', alignItems: 'center', marginBottom: 10 }}>
                     <Text style={{ fontSize: 17, fontWeight: 'bold', justifyContent: 'center' }}>Rion Ming arfin</Text>
@@ -32,7 +32,10 @@ class Drawer extends Component {
                         transparent={true}
                         visible={this.state.modalVisible}
                     >
-                        <View style={{ top: 150, left: 35, padding: 30, elevation: 30, right: 20, backgroundColor: '#fff', width: '80%' }}>
+                    <View style={{flex :1,justifyContent :'center',alignItems : 'center'}}>
+                        <TouchableOpacity onPress={() => { this.setModalVisible(!this.state.modalVisible) }} style={{position:'absolute',top:0,right :0,bottom :0,left:0, backgroundColor :'rgba(0,0,0,0.7)'}}>
+                        </TouchableOpacity>
+                        <View style={{backgroundColor: '#fff', width: '70%',height:200,padding :20 }}>
                             <TextInput placeholder='category items' style={{ borderBottomWidth: 2, borderColor: '#667867' }}></TextInput>
                             <TextInput placeholder='image url' style={{ borderBottomWidth: 2, borderColor: '#667867' }}></TextInput>
                             <View style={{ justifyContent: 'space-between', flexDirection: 'row', paddingTop: 10 }}>
@@ -44,6 +47,7 @@ class Drawer extends Component {
                                 </TouchableHighlight>
                             </View>
                         </View>
+                    </View>
                     </Modal>
                     <TouchableOpacity onPress={() => { this.setModalVisible(true) }} style={{flex :1,flexDirection :'row'}}>
                     <Image source={require('../../assets/pluss.png')} style={{width :20,height :20,marginLeft :19}}/>

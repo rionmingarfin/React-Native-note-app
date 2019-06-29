@@ -39,7 +39,7 @@ class Home extends Component {
         headerLeft: (
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <Button transparent onPress={() => navigation.toggleDrawer()}>
-                    <Thumbnail source={require('../../assets/dwnld.jpeg')}
+                    <Thumbnail source={require('../../assets/rion.jpg')}
                         style={{ height: 35, width: 35, left: 15 }} />
                 </Button>
             </View>

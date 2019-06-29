@@ -50,11 +50,11 @@ class editNotes extends Component {
                             selectedValue={this.state.selected2}
                             onValueChange={this.onValueChange2.bind(this)}
                         >
-                            <Picker.Item label="OPTIONS" value="0" />
-                            <Picker.Item label="WORK" value="1" />
-                            <Picker.Item label="WISHLIST" value="2" />
-                            <Picker.Item label="PERSONAL" value="3" />
-                            <Picker.Item label="LEARN" value="4" />
+                            <Picker.Item label="OPTIONS" value={this.props.navigation.state.params.category} />
+                            <Picker.Item label="WORK" value={this.props.navigation.state.params.category} />
+                            <Picker.Item label="WISHLIST" value={this.props.navigation.state.params.category} />
+                            <Picker.Item label="PERSONAL" value={this.props.navigation.state.params.category} />
+                            <Picker.Item label="LEARN" value={this.props.navigation.state.params.category} />
                         </Picker>
                     </Item>
                 </Form>

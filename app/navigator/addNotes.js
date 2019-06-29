@@ -44,7 +44,7 @@ export default class addNotes extends Component {
                     <Text style={{fontSize :18,fontWeight :'bold'}}>CATEGORY</Text>
                     <Item picker>
                         <Picker
-                            style={{ width: 150,elevation :3,height :45,paddingTop : 20 }}
+                            style={{paddingTop : 20 }}
                             placeholderStyle={{ color: "#bfc6ea" }}
                             selectedValue={this.state.selected2}
                             onValueChange={this.onValueChange2.bind(this)}

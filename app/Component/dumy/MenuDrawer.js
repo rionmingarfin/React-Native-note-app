@@ -35,7 +35,7 @@ class MenuDrawer extends Component {
             <View style={styles.container}>
                 <View style={{ alignItems: 'center', marginLeft: 10, justifyContent: "center" }}>
                     <TouchableOpacity onPress={() => this.props.navigation.toggleDrawer()}>
-                        <Image source={require('../../assets/dwnld.jpeg')} style={{ height: 35, width: 35,borderRadius:100 }} />
+                        <Image source={require('../../assets/rion.jpg')} style={{ height: 35, width: 35,borderRadius:100 }} />
                     </TouchableOpacity>
                 </View>
                 <View style={styles.notes}>
