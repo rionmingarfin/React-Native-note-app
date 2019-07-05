@@ -1,20 +1,30 @@
 import React, { Component } from 'react';
-import { View ,Text,Image} from 'react-native';
-import MenuButton from '../../Component/MenuButton';
-
-export default class Category extends Component {
+import { View ,Text,Image,FlatList} from 'react-native';
+import moment from 'moment'
+import {getNotes} from '../../publics/redux/action/notes'
+import {connect} from 'react-redux'
+class Category extends Component {
     static navigationOptions = {
-        drawerLabel : 'add category',
-        drawerIcon : ({tintColor}) => {
-            return <Image source={require('../../assets/plus.jpeg')} style={{width : 20,height :20}}/>
-        }
+        headerTitle: 'add notes',
+        headerTitleStyle: {
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexGrow: 1,
+            textAlign: 'center'
+        },
     }
     render() {
         return (
             <View>
-            <MenuButton navigation={this.props.navigation}/>
-                <Text>Category</Text>
+                <FlatList
+                data ={this.props.Category.data}/>
             </View>
         );
     }
 }
+const mapStateToProps = state => {
+    return {
+        Category: state.notes
+    }
+}
+export default connect(mapStateToProps)(Category)

@@ -9,12 +9,13 @@ import Wishlist from './routes/Wishlist';
 import Category from './routes/Category';
 import addNotes from './addNotes';
 import editNotes from './editNotes';
-
+import detailCategory from './detailCategory'
 
 const AppStack = createStackNavigator({
     home: { screen: Home},
     addNotes : {screen :addNotes},
-    editNotes : {screen : editNotes}
+    editNotes : {screen : editNotes},
+    detailCategory : {screen :detailCategory}
   },{
       initialRouteName : 'home'
   }
@@ -24,21 +25,21 @@ const HomeScreen = createDrawerNavigator({
     Home: {
         screen: AppStack,
         navigationOptions: {
-            drawerLabel: 'HOME',
-            drawerIcon: ({ tintColor }) => {
-                return <Icon name='home' size={25} style={{ color: tintColor }}></Icon>
-            }
+            drawerLabel: () => null,
+            // drawerIcon: ({ tintColor }) => {
+            //     return <Icon name='home' size={25} style={{ color: tintColor }}></Icon>
+            // }
         }
     },
-    pesonal: {
-        screen: Personal,
-    },
-    Work: {
-        screen: Work,
-    },
-    Wishlist: {
-        screen: Wishlist,
-    },
+    // pesonal: {
+    //     screen: Personal,
+    // },
+    // Work: {
+    //     screen: Work,
+    // },
+    // Wishlist: {
+    //     screen: Wishlist,
+    // },
     // Category: {
     //     screen: Category,
     // },
