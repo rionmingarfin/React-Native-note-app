@@ -19,7 +19,10 @@ create an Andoird application and how to connect to the rest API
 
 ###### note
 [don't forget to run the server](https://github.com/rionmingarfin/simple_note_expressjs) first and `ADB` OR `AVD`
-
-![Screenshot_2019-07-06-23-31-49-61](https://user-images.githubusercontent.com/43402837/60758911-2bd4cf80-a047-11e9-8c64-f457632b4891.png)
-![Screenshot_2019-07-06-23-31-57-03](https://user-images.githubusercontent.com/43402837/60758937-6179b880-a047-11e9-89f1-070f04ccf36b.png)
-![Screenshot_2019-07-06-23-31-57-03](https://user-images.githubusercontent.com/43402837/60758940-6dfe1100-a047-11e9-8289-d2e26c1c421c.png)
+<p align='center'>
+  <span>
+   <img src='https://user-images.githubusercontent.com/43402837/60758911-2bd4cf80-a047-11e9-8c64-f457632b4891.png' width=200/>
+   <img src='https://user-images.githubusercontent.com/43402837/60758937-6179b880-a047-11e9-89f1-070f04ccf36b.png' width=200/>
+   <img src='https://user-images.githubusercontent.com/43402837/60763758-65d4be80-a0a5-11e9-9350-3dd1c098ff2d.png' width=200/>
+  </span>
+</p>
