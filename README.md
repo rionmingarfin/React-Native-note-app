@@ -1,7 +1,19 @@
 # <p align="center">React-Native-note-app</p>
+<br>
+<br>
+<p align='center'>
+  <a href='https://facebook.github.io/react-native/'>
+  <img src='https://kreitech.io/blog/wp-content/uploads/2018/10/1_-NOQtyJAGQ1RNC3iVt_thA.png' />
+  </a>
+</p>
+
+<br>
+<br>
 
 ## GETING STARTED
-
+[![React Native](https://img.shields.io/badge/React%20Native-0.60-blue.svg?style=rounded-square)](https://facebook.github.io/react-native/)
+[![Node.js](https://img.shields.io/badge/Node.js-v.10.16-green.svg?style=rounded-square)](https://nodejs.org/)
+<br>
 this application was built using the original react native, this application will tell you how
 create an Andoird application and how to connect to the rest API
 
@@ -19,6 +31,11 @@ create an Andoird application and how to connect to the rest API
 
 ###### note
 [don't forget to run the server](https://github.com/rionmingarfin/simple_note_expressjs) first and `ADB` OR `AVD`
+<br>
+App view can be seen on youtube
+<br>
+demo application [note app](https://youtu.be/AVbdLZTiD10)
+## screnshot application
 <p align='center'>
   <span>
    <img src='https://user-images.githubusercontent.com/43402837/60758911-2bd4cf80-a047-11e9-8c64-f457632b4891.png' width=200/>
