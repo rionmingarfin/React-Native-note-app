@@ -42,23 +42,24 @@ export default Category = (state = initialState, action) => {
                 isError: false,
                 data:[...state.data].concat([action.payload.data.result])
             }
-            case "GET_DELETE_PENDING":
+            case "DELETE_CATEGORY_PENDING":
                 return {
                     ...state,
                     isLoading: true
                 }
-            case "GET_DELETE_REJECTED":
+            case "DELETE_CATEGORY_REJECTED":
                 return {
                     ...state,
                     isLoading: false,
                     isError: true
                 }
-            case "GET_DELETE_FULFILLED":
+            case "DELETE_CATEGORY_FULFILLED":
                 return {
                     ...state,
                     isLoading: false,
+                    data: state.data,
                     data: state.data.filter(val => (
-                        val.idNotes !== action.payload.data.result.id
+                        val.id !== action.payload.data.result.id
                     ))
                 }
         default:

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getNotes, deleteNotes,getNotesPage} from '../publics/redux/action/notes'
 import moment from 'moment'
 import lodash from 'lodash'
-
+console.logYellowBox=true;
 class Card extends Component {
     constructor() {
         super()
@@ -41,11 +41,14 @@ class Card extends Component {
         // console.log(this.props.notes.page.totalPage)
         if (this.props.notes.page.page < this.props.notes.page.totalPage) {
             setTimeout(()=>this.props.dispatch(getNotesPage(this.props.notes.page.page = this.props.notes.page.page + 1)),300)
+        }else{
+            
         }
+        
 }
     confirmation(id_notes) {
         Alert.alert(
-            'Hapus', `Are you sure delete this item?`,
+            'delete', `Are you sure delete this item?`,
             [
                 {
                     text: 'Cancel',
@@ -54,8 +57,8 @@ class Card extends Component {
                 {
                     text: 'OK',
                     onPress: () => {
-                     this.props.dispatch(deleteNotes(id_notes)),
-                     this.props.dispatch(getNotes(''))
+                     this.props.dispatch(deleteNotes(id_notes))
+                    //  this.props.dispatch(getNotes(''))
                     }
                 },
             ],
@@ -88,7 +91,7 @@ class Card extends Component {
              item.item.name_category == 'learn' ? '#2FC245' :
              item.item.name_category == 'personal' ? '#C0EB6A' :
              item.item.name_category == 'daily' ? '#FAD06C' :
-             item.item.name_category == 'team' ? '#FF92A9' : '#2F4356'
+             item.item.name_category == 'Wishlist' ? '#FF92A9' : '#2F4356'
             
         }} onLongPress={()=>this.confirmation(item.item.id_notes)}>
         {/* {console.log(item)} */}

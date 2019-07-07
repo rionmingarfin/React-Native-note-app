@@ -12,20 +12,21 @@ class editNotes extends Component {
             id_notes :this.props.navigation.state.params.item.id_notes,
             title: this.props.navigation.state.params.item.notes_title,
             note: this.props.navigation.state.params.item.notes_note,
-            id_category : this.props.navigation.state.params.item.id_category
+            category_id : this.props.navigation.state.params.item.category_id
         };
     }
     editNotes = () => {
-        console.log('data')
-        console.log(this.state)
+        // console.log('data')
+        // console.log(this.state)
+        let category_id = parseInt(this.state.category_id)
             this.props.dispatch(updateNote(this.state.id_notes, {
                 title : this.state.title,
                 note: this.state.note,
-                category_id : this.state.id_category,
+                category_id : category_id,
 
             }))
-            this.props.dispatch(getNotes())
-            this.props.navigation.navigate('home')
+            // this.props.dispatch(getNotes())
+            this.props.navigation.goBack()
         
     }
     componentDidMount() {
@@ -73,8 +74,8 @@ class editNotes extends Component {
                         <Picker
                             style={{elevation:1, height: 45, paddingTop: 20, marginBottom: 165}}
                             placeholderStyle={{ color: "#bfc6ea" }}
-                            selectedValue={this.state.id_category}
-                            onValueChange={(value) => this.setState({ id_category: value })}
+                            selectedValue={this.state.category_id}
+                            onValueChange={(value) => this.setState({ category_id: value })}
                         >
                             {
                                 this.props.Category.data.map(Item => (

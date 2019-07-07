@@ -2,8 +2,7 @@ const initialState = {
     data: [],
     isLoading: false,
     isError: false,
-    response: '',
-    page :[]
+    page: []
 }
 
 export default notes = (state = initialState, action) => {
@@ -13,77 +12,57 @@ export default notes = (state = initialState, action) => {
                 ...state,
                 isLoading: true
             }
-            case "GET_NOTES_REJECTED":
-                return {
-                ...state,
-                isLoading: false,
-                isError: true
-            }
-            case "GET_NOTES_FULFILLED":
-                
-                return {
-                    ...state,
-                    isLoading: false,
-                    isError: false,
-                    page:action.payload.data,
-                    data:action.payload.data.data,
-                // data:[...state.data].concat(action.payload.data.data),
-            }
-            // case "GET_NOTES_SORT_PENDING":
-            //     return {
-                //         ...state,
-                //         isLoading: true
-                //     }
-                // case "GET_NOTES_SORT_REJECTED":
-                //     return {
-                    //         ...state,
-                    //         isLoading: false,
-                    //         isError: true
-                    //     }
-                    // case "GET_NOTES_SORT_FULFILLED":
-                    
-                    //     return {
-                        //         ...state,
-                        //         isLoading: false,
-                        //         isError: false,
-                        //         data:action.payload.data.data,
-                        //     }
-                        case "GET_PAGE_NOTES_PENDING":
-            return {
-                ...state,
-                isLoading: true
-            }
-            case "GET_PAGE_NOTES_REJECTED":
+        case "GET_NOTES_REJECTED":
             return {
                 ...state,
                 isLoading: false,
                 isError: true
             }
-            case "GET_PAGE_NOTES_FULFILLED":
+        case "GET_NOTES_FULFILLED":
+
             return {
                 ...state,
                 isLoading: false,
                 isError: false,
-                data:[...state.data].concat(action.payload.data.data),
-                // page : action.payload.data.totalPage,
+                page: action.payload.data,
+                data: action.payload.data.data,
             }
-        case "GET_DELETE_PENDING":
+
+        case "GET_PAGE_NOTES_PENDING":
             return {
                 ...state,
                 isLoading: true
             }
-            case "GET_DELETE_REJECTED":
+        case "GET_PAGE_NOTES_REJECTED":
             return {
                 ...state,
                 isLoading: false,
                 isError: true
             }
-        case "GET_DELETE_FULFILLED":
+        case "GET_PAGE_NOTES_FULFILLED":
+            return {
+                ...state,
+                isLoading: false,
+                isError: false,
+                data: [...state.data, ...action.payload.data.data],
+            }
+        case "DELETE_NOTES_PENDING":
+            return {
+                ...state,
+                isLoading: true
+            }
+        case "DELETE_NOTES_REJECTED":
+            return {
+                ...state,
+                isLoading: false,
+                isError: true
+            }
+        case "DELETE_NOTES_FULFILLED":
             return {
                 ...state,
                 isLoading: false,
                 data: state.data.filter(val => (
-                    val.idNotes !== action.payload.data.result.idNotes
+                    action.payload.data.result.id_notes !== val.id_notes
                 ))
             }
         case "POST_NOTES_PENDING":
@@ -101,7 +80,7 @@ export default notes = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                response: action.payload.data.result
+                data: [action.payload.data.result, ...state.data]
             }
         case "EDIT_NOTES_PENDING":
             return {
@@ -118,9 +97,9 @@ export default notes = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                response: state.data.map(data =>
-                    (data.id_notes == action.payload.data.result.id_notes) ?
-                        action.payload.data.result : data
+                data: state.data.map(value =>
+                    (value.id_notes == action.payload.data.result.id_notes) ?
+                        action.payload.data.result : value
                 )
             }
         case "GET_NOTES_BY_ID_CATEGORY_PENDING":

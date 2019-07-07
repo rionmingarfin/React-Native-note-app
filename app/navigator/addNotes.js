@@ -15,20 +15,19 @@ class addNotes extends Component {
     }
     addpost = () => {
         console.log('dapat')
-        // console.log(this.state.title)
-        // console.log(this.state.note)
-        // console.log(this.state.category)
-        if (this.state.title != '' && this.state.note != '' && this.state.category != '') {
-            const { title, note, category } = this.state
-            this.props.dispatch(postNotes(title, note, category))
-            this.props.dispatch(getNotes(''))
-            // console.log(title);
-            // this.props.navigation.pop()
-            this.props.navigation.navigate('home')
+        const {title,note,category} = this.state
+        if (this.state.title !== '' && this.state.note !== '' && this.state.category !== '') {
+            let data = {
+                'title' : title,
+                'note' : note,
+                'category_id' :category
+            }
+            this.props.dispatch(postNotes(data))
+            this.props.navigation.pop()
+            return true
         } else {
             Alert.alert("warning", 'data please insert data in from')
         }
-
     }
     componentDidMount() {
         this.props.navigation.setParams({ addpost: this.addpost })
@@ -38,7 +37,6 @@ class addNotes extends Component {
         headerTitleStyle: {
             alignItems: 'center',
             justifyContent: 'center',
-            flexGrow: 1,
             textAlign: 'center',
             fontSize: 16
         },
@@ -52,10 +50,12 @@ class addNotes extends Component {
         )
     })
     render() {
-        console.log('data dapat category')
-        console.log(this.props.Category)
+        // console.log('data dapat category')
+        // console.log(this.props.Category)
         return (
-            <View style={{ marginHorizontal: 27, justifyContent: 'center', flex: 1, }}>
+            <View
+            style={{ marginHorizontal: 27, justifyContent: 'center', flex: 1, }}
+            onBackPress={this.onBackButtonPressAndroid}>
                 <View style={{ paddingTop: 30, flex: 1 }}>
                     <TextInput multiline placeholder='ADD TITLE' style={{ fontSize: 20 }} maxLength={50} onChangeText={(value) => this.setState({ title: value })} />
                 </View>
@@ -80,7 +80,7 @@ class addNotes extends Component {
                         </Picker>
                     </Item>
                 </View>
-            </View>
+            </View >
         )
     }
 }

@@ -40,7 +40,7 @@ class Drawer extends Component {
     }
     confirmation = (id) => {
         Alert.alert(
-            'Hapus', `Are you sure delete this item?`,
+            'delete', `Are you sure delete this item?`,
             [
                 {
                     text: 'Cancel',
@@ -51,7 +51,7 @@ class Drawer extends Component {
                     onPress: () => {
                      this.props.dispatch(deleteCategory(id)),
                      this.props.dispatch(getNotes(''))
-                     this.props.dispatch(getCategory(''))
+                    //  this.props.dispatch(getCategory(''))
                     }
                 },
             ],

@@ -46,29 +46,17 @@ export const deleteNotes = (id_notes) => {
         payload: axios.delete(`http://192.168.6.132:3000/notes/${id_notes}`)
     }
 }
-export const postNotes = (title, note, idCategory) => {
-    if (title !== '' && note !== '' && idCategory !== '') {
-        console.log("...." + title)
-        return {
+export const postNotes = (data) => {
+    return {
             type: 'POST_NOTES',
-            payload: axios({
-                method: `post`,
-                url: `http://192.168.6.132:3000/notes`,
-                data: {
-                    title: title,
-                    note: note,
-                    category_id: idCategory
-                }
-            })
-            // payload : dataNotes
-        }
+            payload: axios.post(`http://192.168.6.132:3000/notes`,data)
 
     }
 }
 export const updateNote = (id, data) => {
     return {
         type: 'EDIT_NOTES',
-        payload: axios.put(`http://192.168.6.132:3000/notes/${id}`, data)
+        payload: axios.patch(`http://192.168.6.132:3000/notes/${id}`,data)
     }
 }
 export const getNotesByCategory = (id) =>{

@@ -15,7 +15,7 @@ export const addCategory = (data) => {
 }
 export const deleteCategory = (id) =>{
     return {
-        type : 'DELETE_NOTES',
+        type : 'DELETE_CATEGORY',
         payload :axios.delete(`http://192.168.6.132:3000/category/${id}`)
     }
 }
